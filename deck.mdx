@@ -1,4 +1,4 @@
-import { Head, Notes, themes } from 'mdx-deck';
+import { Head, Notes, themes, Appear } from 'mdx-deck';
 
 export const theme = themes.code;
 
@@ -12,13 +12,120 @@ export const theme = themes.code;
 
 _[Robin Pokorny](https://robinpokorny.com)_
 
-<Notes>Microphone, screen recording, start timer</Notes>
+---
+
+# Robin a typy
+
+## Elm 😻
+
+## Flow 🚀
+
+## ReasonML 👍
+
+## TypeScript 🤷‍♂️
 
 ---
 
-# Why talk about it?
+# formatter ❌ linter ❌ TypeScript
 
-<Notes></Notes>
+---
+
+# `undefined is not a function`
+
+<Notes>
+  JS je nejnejistější, nejzraniteténější (jako poezie) jazyk, dynamický na cizím
+  stroji
+</Notes>
+
+---
+
+# Zapsaný úmysl
+
+```ts
+const add = (a: number, b: number) => a + b;
+
+const sum = (arr: number[]) => arr.reduce(add, 0);
+
+sum([1, 2, 3]).toFixed();
+```
+
+<Notes>Vpisky pro mě, pro sebe, prohlížeči je šumafuk, že vyhodí vyjímku</Notes>
+
+---
+
+# Kontrakty funkcí, modulů, knihoven
+
+---
+
+# Domain-driven design (DDD)
+
+```ts
+type Order = { items: string[] };
+type AcceptedOrder = { items: string[]; acceptedBy: string };
+
+type processOrder = (order: Order) => AcceptedOrder;
+type fulfillOrder = (order: AcceptedOrder) => Shipment;
+```
+
+---
+
+# Programovat
+
+_sloveso_
+
+## Automatizovat komplexní procesy a logiku
+
+## Řešit problémy pomocí stroje
+
+---
+
+# Proč TypeScript? 🤔
+
+---
+
+# Menší než kdy dříve
+
+```sh
+tsc --target "ESNext"
+```
+
+---
+
+# Součástí JavaScriptového ecosystému
+
+## Nejpoužívanější jazyk na světě
+
+## 1.5M balíčků
+
+## client & server
+
+---
+
+# DefinitelyTyped
+
+<a href="https://definitelytyped.org/">definitelytyped.org</a>
+
+---
+
+# Nejlepší podpora v editorech
+
+---
+
+# Je všude
+
+## ~ Díky, Microsofte!
+
+---
+
+#
+
+---
+
+#
+
+---
+
+#
 
 ---
 
@@ -26,4 +133,4 @@ _[Robin Pokorny](https://robinpokorny.com)_
 
 <a href="https://twitter.com/robinpokorny">/robinpokorny</a>
 
-[modre-z-nebe-talk.vercel.app](http://modre-z-nebe-talk.vercel.app/)
+[modre-z-nebe.robinpokorny.vercel.app](https://modre-z-nebe.robinpokorny.vercel.app/#0)
