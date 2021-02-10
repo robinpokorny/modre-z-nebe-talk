@@ -1,10 +1,20 @@
-import { Head, Notes, themes, Appear } from 'mdx-deck';
+import { Head, Notes, themes, Steps, Footer } from 'mdx-deck';
 
-export const theme = themes.code;
+import adlerNotes from './images/AdlerNotesFinal.jpg';
+import intellisense from './images/intellisense.png';
+
+export const theme = { ...themes.code, ...themes.prism };
 
 <Head>
   <title>Modré z nebe: proč používám TypeScript</title>
 </Head>
+
+<Footer>
+
+**Modré z nebe**: proč používám TypeScript — <a href="https://twitter.com/robinpokorny">@robinpokorny</a>
+— **{F}** <sub><small>🔴</small> LIVE</sub>
+
+</Footer>
 
 # Modré z nebe
 
@@ -16,6 +26,8 @@ _[Robin Pokorny](https://robinpokorny.com)_
 
 # Robin a typy
 
+<Steps>
+
 ## Elm 😻
 
 ## Flow 🚀
@@ -23,6 +35,8 @@ _[Robin Pokorny](https://robinpokorny.com)_
 ## ReasonML 👍
 
 ## TypeScript 🤷‍♂️
+
+</Steps>
 
 ---
 
@@ -53,19 +67,49 @@ sum([1, 2, 3]).toFixed();
 
 ---
 
+<img
+  src={adlerNotes}
+  style={{
+    margin: '0 auto',
+    display: 'block',
+    maxWidth: '90%',
+    maxHeight: '90%',
+  }}
+/>
+
+---
+
 # Kontrakty funkcí, modulů, knihoven
+
+---
+
+<img
+  src={intellisense}
+  style={{
+    margin: '0 auto',
+    display: 'block',
+    maxWidth: '90%',
+    maxHeight: '90%',
+  }}
+/>
+
+<Notes>Lze pripravit objekty predem</Notes>
 
 ---
 
 # Domain-driven design (DDD)
 
 ```ts
-type Order = { items: string[] };
+type IncomingOrder = { items: string[] };
 type AcceptedOrder = { items: string[]; acceptedBy: string };
+
+type Order = IncomingOrder | AcceptedOrder;
 
 type processOrder = (order: Order) => AcceptedOrder;
 type fulfillOrder = (order: AcceptedOrder) => Shipment;
 ```
+
+<Notes>Typy existuji samostatne, daji se sdilet. BRANDED TYPES: VOJTA</Notes>
 
 ---
 
@@ -121,16 +165,8 @@ tsc --target "ESNext"
 
 ---
 
-#
-
----
-
-#
-
----
-
 # 👋
 
-<a href="https://twitter.com/robinpokorny">/robinpokorny</a>
+<a href="https://twitter.com/robinpokorny">@robinpokorny</a>
 
 [modre-z-nebe.robinpokorny.vercel.app](https://modre-z-nebe.robinpokorny.vercel.app/#0)
